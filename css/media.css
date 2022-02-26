@@ -1,0 +1,39 @@
+@media screen and (max-width:1000px) {
+    
+    .search{ 
+        height: 600px;
+        background-image: url(/img/bg-mb.jpg);
+    }
+    #search-input{
+        width: 50%;
+    }
+    #search-section{
+        top: 180px;
+    }
+};
+@media screen and (max-width:800px) {
+    
+    .search{ 
+        height: 400px;
+        background-image: url(/img/bg.jpg);
+    }
+    #search-input{
+        width: 50%;
+    }
+    #search-section{
+        top: 10px;
+    }
+};
+@media screen and (max-width:500px) {
+    
+    .search{ 
+        height:200px;
+        background-image: url(/img/bg-mb.jpg);
+    }
+    #search-input{
+        width: 50%;
+    }
+    #search-section{
+        top: 10px;
+    }
+};
