@@ -1,5 +1,6 @@
 //get data 
 const getSearch = () => {
+    document.getElementById('search-section').style.height ='100vh';
     mainSection.innerHTML = '';
     answersSection.innerHTML = '';
     const searchInput = document.getElementById('search-input');
@@ -42,7 +43,7 @@ const displayResult = (data) => {
             div.innerHTML = `
         <div class="card my-3 p-2 card-block">
                 <div class="card-body">
-                    <p class="card-text text-white-50"><small class="text-muted">${result?.cite.domain || result.link}</small></p>
+                    <p class="card-text domain-text"><small>${result?.cite.domain || result.link}</small></p>
                     <a class="search-title" href="${result.link}" title="${result.link}">
                         <h5 class="card-title d-inline-block">${result.title}</h5>
                     </a>
@@ -66,6 +67,7 @@ const displayResult = (data) => {
                 li.innerText = answer;
                 answersSection.appendChild(li);
             });
+            document.getElementById('search-section').style.height ='50vh';
         }
         else {
             answersSection.innerHTML = '';
@@ -74,6 +76,14 @@ const displayResult = (data) => {
     else{
         Loader.close();
         document.getElementById('not-found').style.display ="block";
+        document.getElementById('search-section').style.height ='60vh';
     }
 
+};
+
+// add enter key button
+document.onkeydown = function(){
+    if(window.event.keyCode === 13){
+        getSearch();
+    }
 };
